@@ -15,4 +15,4 @@ for Sentence in sent_document:
 for Word in word_document:
     print(Word)
 
-# word_tokanize uses TreeBankWordTokanizer under the hood.                                                           
+# word_tokanize uses TreeBankWordTokanizer under the hood.
