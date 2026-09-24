@@ -1,8 +1,28 @@
-paragraph="The old lighthouse stood as a silent sentinel on the jagged cliffs, braving decades of fierce Atlantic storms. Every evening, its brilliant beacon sliced through the dense coastal fog, offering a reliable guiding light to weary sailors navigating the treacherous, reef-filled waters below. Inside, the smooth stone walls held generations of secrets, from the quiet, isolated lives of the early keepers to the historic shipwrecks they desperately tried to prevent. Today, automated technology has completely replaced the human touch, yet the majestic structure still commands a powerful presence over the coastline. Visitors from all over the world travel down the winding, gravel path just to touch its weathered base and listen closely to the crashing waves. They often wonder about the solitary lives lived within its circular belly, imagining a time when a single flickering flame was the only thing standing between an approaching ship and absolute destruction on the rocks."
+paragraph= "The majestic old oak tree stands at the center of the quiet park, casting a deep and cool shadow over the soft green grass below. Every single day, many people from the busy neighborhood walk past its massive trunk, but only a few ever stop to truly appreciate its ancient beauty. Small brown birds build their tiny nests high up in the thick branches, while restless squirrels constantly run up and down the rough bark in search of food. When a gentle breeze blows through the valley, the leaves softly rustle, creating a peaceful melody that calms everyone nearby."
+
+
+#implement stop words from "Stemming"
+
+import nltk
 from nltk.stem import PorterStemmer
 from nltk.corpus import stopwords
 from nltk.tokenize import sent_tokenize
-#print(stopwords.words('english')) # to print normal english stopwords from the NLTK 
-print(sent_tokenize(paragraph))
 
-#Apply stopwords, then Filter, then Stemming
+
+#tokenization
+sentence = nltk.sent_tokenize(paragraph)
+stemmer=PorterStemmer()
+
+
+#Apply stopwords -> Apply Filter -> Apply Stemming
+for i in range (len(sentence)):
+   words = nltk.word_tokenize(sentence[i])  #we will get list of words "inside" the sentences.
+
+
+   #now we have to see that word falls in the category of "Stopwords" or not if it does then apply "Stemming".
+   words =  [stemmer.stem(word) for word in words if word not in set(stopwords.words("english"))]
+   sentence[i]= " ".join(words) # converting all the "list" words back into sentences.
+
+
+#stopwords in ENGLISH
+#print(stopwords.words("english"))
