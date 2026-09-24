@@ -22,7 +22,7 @@ for i in range (len(sentence)):
    #now we have to see that word falls in the category of "Stopwords" or not if it does then apply "Stemming".
    words =  [stemmer.stem(word) for word in words if word not in set(stopwords.words("english"))] # If word is not found then move forward otherwise catch it & hrow it.
    sentence[i]= " ".join(words) # converting all the "list" words back into sentences.
-
+print(sentence)
 
 #stopwords in ENGLISH
 #print(stopwords.words("english"))
