@@ -1,0 +1,34 @@
+# Financial News Sentiment Classification
+
+A machine learning project that classifies financial news headlines into **Positive, Negative, and Neutral** sentiment categories using Natural Language Processing (NLP).
+
+### Dataset
+- **File:** `all-data.csv`
+- **Input:** Financial news text
+- **Target:** Sentiment label
+
+### Techniques Used
+- Text preprocessing using NLTK
+- Stopword removal and Snowball Stemming
+- TF-IDF feature extraction
+- Logistic Regression classification
+- Hyperparameter tuning using GridSearchCV
+- Model evaluation using accuracy, precision, recall, and F1-score
+
+### Initial Results
+- **Accuracy:** 70.9%
+- **Macro F1-score:** 0.59
+- **Train-test split:** 80:20
+
+*Initial results were obtained using Multinomial Naive Bayes. The Logistic Regression model is being optimized and evaluated separately.*
+
+### Learning Outcomes
+- Text preprocessing and feature engineering
+- Building an NLP classification pipeline
+- Handling imbalanced sentiment classes
+- Evaluating machine learning models
+
+### Future Improvements
+- Compare different preprocessing techniques and classifiers
+- Improve performance across all sentiment classes
+- Deploy the model using FastAPI and build a React frontend
